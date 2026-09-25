@@ -10,7 +10,7 @@ private keys, or signing.
 - Refresh balances or change tokens, wallet, RPC, or chain without restarting.
 - Exact decimals, a shared block number, and explicit errors instead of false zeroes.
 
-![Selecting tokens in the terminal](docs/screenshots/tokens.png)
+![Selecting tokens in the terminal](https://raw.githubusercontent.com/ustas-eth/erc20-balance/main/docs/screenshots/tokens.png)
 
 ## Install
 
@@ -18,20 +18,20 @@ Requires **Python 3.9+** and **[fzf](https://github.com/junegunn/fzf#installatio
 on Linux or macOS. Install `fzf` with your package manager, then:
 
 ```sh
-uv tool install git+https://github.com/ustas-eth/erc20-balance.git
+uv tool install erc20-balance
 erc20-balance
 ```
 
-Use `pipx install` instead of `uv tool install` if you prefer. Installing a private
-repository requires GitHub access. From a checkout, use `uv tool install .`.
+Use `pipx install erc20-balance` if you prefer. Update with
+`uv tool upgrade erc20-balance`. From a checkout, use `uv tool install .`.
 
 **Enter** confirms and **Esc** goes back. Run
 `erc20-balance --help` for options, or `erc20-balance --version` for the version.
 
-![Balances from a demo session](docs/screenshots/balances.png)
+![Balances from a demo session](https://raw.githubusercontent.com/ustas-eth/erc20-balance/main/docs/screenshots/balances.png)
 
 *Screenshots capture the real CLI with fixture metadata and demo balances.*
-[Chain picker](docs/screenshots/chains.png) · [RPC picker](docs/screenshots/rpc.png)
+[Chain picker](https://raw.githubusercontent.com/ustas-eth/erc20-balance/main/docs/screenshots/chains.png) · [RPC picker](https://raw.githubusercontent.com/ustas-eth/erc20-balance/main/docs/screenshots/rpc.png)
 
 ## Privacy
 
@@ -46,5 +46,5 @@ erc20-balance --local-only               # Your loopback node; no list downloads
 erc20-balance --privacy                  # Full data-handling explanation
 ```
 
-Read [privacy and correctness limits](docs/privacy.md).
-[Contributing](CONTRIBUTING.md) · [MIT license](LICENSE)
+Read [privacy and correctness limits](https://github.com/ustas-eth/erc20-balance/blob/main/docs/privacy.md).
+[Contributing](https://github.com/ustas-eth/erc20-balance/blob/main/CONTRIBUTING.md) · [MIT license](https://github.com/ustas-eth/erc20-balance/blob/main/LICENSE)
