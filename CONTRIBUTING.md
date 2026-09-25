@@ -15,8 +15,7 @@ runtime dependencies; development and screenshot tools stay in dependency groups
 
 ## Commits and review
 
-Commit headers use `type(scope): description`, following
-[ferrumctl](https://github.com/ustas-eth/ferrumctl):
+Commit headers use `type(scope): description`:
 
 ```text
 feat(cli): make RPC selection explicit

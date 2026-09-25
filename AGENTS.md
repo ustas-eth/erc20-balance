@@ -38,5 +38,3 @@ Follow `CONTRIBUTING.md` for verification, commit conventions, and publishing.
 Test observable behavior with local fixtures; do not use personal wallets,
 credentials, or live RPCs in tests or screenshots. Screenshots must show the real
 CLI and identify fixture balances as demo data.
-
-Adapted from ustas-eth/ferrumctl's engineering and context conventions.
