@@ -35,8 +35,23 @@ live RPCs or use personal wallet addresses or credentials.
 Use a branch and pull request for behavior, compatibility, packaging, or version
 changes. Squash-merge by default and delete the merged branch. Direct commits to
 `main` are reserved for repository bootstrap and small maintenance that cannot
-affect installed behavior. Publish by merging the reviewed change and updating
-local installations; add tags/releases only when distribution needs them.
+affect installed behavior.
+
+## Releases
+
+Set `__version__` in `src/erc20_balance/__init__.py`, run `uv lock`, and merge
+the change after checks pass. Publish a GitHub release with a matching tag
+(for example, `v0.1.0`). The `publish.yaml` workflow checks the tagged source,
+builds a wheel and source archive, and publishes them to PyPI.
+
+PyPI uses a trusted publisher for `ustas-eth/erc20-balance`, workflow
+`publish.yaml`, with no environment name. No API token is needed. The build
+job has read-only permissions; only the upload job can request a publishing
+identity. PyPI attestations are generated during upload.
+
+If publishing fails before upload, rerun the failed job or run the Publish
+workflow manually with the same tag. Published versions cannot be replaced;
+ship corrections under a new version.
 
 ## Screenshots
 
