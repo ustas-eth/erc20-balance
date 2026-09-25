@@ -5,7 +5,6 @@ import re
 import sys
 from pathlib import Path
 
-
 TYPES = {
     "build",
     "chore",
@@ -54,9 +53,7 @@ def validate_message(message: str) -> list[str]:
     if description != description.strip():
         errors.append("description must not have leading or trailing whitespace")
     if len(description) < MIN_DESCRIPTION_LENGTH:
-        errors.append(
-            f"description must contain at least {MIN_DESCRIPTION_LENGTH} characters"
-        )
+        errors.append(f"description must contain at least {MIN_DESCRIPTION_LENGTH} characters")
     if description.endswith("."):
         errors.append("description must not end with a period")
     return errors
