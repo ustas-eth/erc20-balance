@@ -485,14 +485,17 @@ class Tests(unittest.TestCase):
 
             try:
                 expect_terminal("Tokens")
-                time.sleep(0.15)
                 child.send("USDC")
-                time.sleep(0.15)
+                expect_terminal("1/3")
                 child.send("\t")
+                expect_terminal(r"\(1\)")
                 child.send("\x15")
+                expect_terminal("3/3")
                 child.send("native")
-                time.sleep(0.15)
-                child.send("\t\r")
+                expect_terminal("1/3")
+                child.send("\t")
+                expect_terminal(r"\(2\)")
+                child.send("\r")
                 expect_terminal("2/2 successful")
                 expect_terminal("Next")
                 time.sleep(0.15)
@@ -627,7 +630,9 @@ class Tests(unittest.TestCase):
                 expect_terminal("1/1 successful")
                 expect_terminal("Next ›")
                 child.send("Change RPC")
-                time.sleep(0.15)
+                # Older fzf redraws can fill the PTY buffer. Drain output until
+                # filtering finishes before accepting the highlighted result.
+                expect_terminal("1/6")
                 child.send("\r")
                 expect_terminal("RPC ›")
                 child.send("\x1b")

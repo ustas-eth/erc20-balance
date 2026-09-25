@@ -1,4 +1,4 @@
-"""Repository contracts inherited from ferrumctl."""
+"""Repository commit conventions."""
 
 import importlib.util
 import unittest
